@@ -18,6 +18,4 @@ $query = mysql_query("UPDATE `proglive_php2`.`articles` SET `subject` = 'auto_ed
 
 echo ($query) ? 'Статья изменена.' : 'Произошла ошибка при изменении!';
 
-
-
 ?>
