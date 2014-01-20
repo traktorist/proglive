@@ -14,4 +14,3 @@ define('DB_USER', 'proglive_php2');
 define('DB_PASS', 'proglive_php2_pass');
 
 ?>
-
