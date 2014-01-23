@@ -1,21 +1,1 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: traktor
- * Date: 19.01.14
- * Time: 13:01
- */
-
-require_once('/config.php');
-require_once('/functions.php');
-
-echo 'This is php2 lessons, mother father!' . '<br /><br /><br />';
-ConnectDB();
-
-$q_all_articles = mysql_query("SELECT * FROM `articles` LEFT JOIN `users` USING (`id_user`) ORDER BY `articles`.`create_date` DESC;");
-while ($article = mysql_fetch_array($q_all_articles)) {
-    echo 'РўРµРјР°: ' . $article['subject'] . '<br />РўРµР»Рѕ: ' . $article['context'] . '<br />РђРІС‚РѕСЂ: ' . $article['first_name'] . ' ' . $article['last_name'] . '<br />Р”Р°С‚Р°: ' . $article['create_date'] . '<br /><br />----------<br /><br />';
-}
-
-?>
-
+<h1>Сайт нужно доделать!</h1><a href="editor.php">Консоль редактора</a>
