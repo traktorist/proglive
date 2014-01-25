@@ -14,3 +14,5 @@ function startup()
 
     session_start();
 }
+
+?>
