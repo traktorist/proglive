@@ -1,1 +1,1 @@
-<h1>Сайт нужно доделать!</h1><a href="editor.php">Консоль редактора</a>
+<?phpinclude_once('startup.php');include_once('model.php');// Установка параметров, подключение к БД.startup();// Извлечение статей.if (!$articles = articles_all()) die('что-то пошло не так!');// Вывод в шаблон.include('view/index.php');?>

@@ -7,7 +7,7 @@
  */
 
 // кодировка исполнения php
-setlocale(LC_ALL, 'ru_RU.UNF8');
+setlocale(LC_ALL, 'ru_RU.UTF8');
 
 // параметры подключения к БД
 define('DB_HOST', 'localhost');
