@@ -14,7 +14,7 @@ ConnectDB();
 
 $q_all_articles = mysql_query("SELECT * FROM `articles` LEFT JOIN `users` USING (`id_user`) ORDER BY `articles`.`create_date` DESC;");
 while ($article = mysql_fetch_array($q_all_articles)) {
-    echo 'Тема: ' . $article['subject'] . '<br />Тело: ' . $article['context'] . '<br />Автор: ' . $article['first_name'] . ' ' . $article['last_name'] . '<br />Дата: ' . $article['create_date'] . '<br /><br />----------<br /><br />';
+    echo 'Тема: ' . $article['subject'] . '<br />Тело: ' . $article['content'] . '<br />Автор: ' . $article['first_name'] . ' ' . $article['last_name'] . '<br />Дата: ' . $article['create_date'] . '<br /><br />----------<br /><br />';
 }
 
 ?>

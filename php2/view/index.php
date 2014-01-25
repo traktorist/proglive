@@ -36,8 +36,8 @@ content - текст
                 <a href="article.php?id_article=<?=$article['id_article']?>">
                     <?=$article['subject']?>
                 </a><br />
-<!--                --><?//=$article['context']?>
-                <?=$article['context_intro']?>
+<!--                --><?//=$article['content']?>
+                <?=$article['content_intro']?>
             </li>
         <? endforeach ?>
     </ul>

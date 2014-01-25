@@ -31,7 +31,7 @@ content - текст
     </p>
     <p>
         <b>Тело:</b>
-        <?=$article['context']?>
+        <?=$article['content']?>
     </p>
     <p>
         <b>Автор:</b>

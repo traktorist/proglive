@@ -3,7 +3,7 @@
 Шаблон главной страницы
 =======================
 $subject - заголовок
-$context - содержание
+$content - содержание
 */
 ?>
 
@@ -30,7 +30,7 @@ $context - содержание
     <input type="text" name="subject" value="<?=$subject?>" /><br/>
     <br/>
     Содержание:<br/>
-    <textarea name="context"><?=$context?></textarea><br/>
+    <textarea name="content"><?=$content?></textarea><br/>
     <input type="submit" value="Сохранить" />
 <!--    <input type="submit" value="Отмена" />-->
 <!--    <input type="submit" value="Удалить" />-->
