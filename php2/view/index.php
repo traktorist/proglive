@@ -24,6 +24,9 @@ content - текст
     <b>Главная</b> |
     <a href="editor.php">Консоль редактора</a>
     <hr/>
+    <? if($add_success): ?>
+        <b style="color: lime;">Статья добавлена.</b>
+    <? endif ?>
     <ul>
         <li>
             <b><a href="new.php">Новая статья</a></b>

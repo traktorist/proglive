@@ -1,1 +1,1 @@
-<?phpinclude_once('startup.php');include_once('model.php');// Установка параметров, подключение к БД.startup();// Извлечение статей.if (!$articles = articles_all()) die('что-то пошло не так!');// Вывод в шаблон.include('view/editor.php');?>
+<?phpinclude_once('startup.php');include_once('model.php');// установка параметров, подключение к БД, старт сессииstartup();// Извлечение статей.if (!$articles = articles_all()) die('что-то пошло не так!');// Вывод в шаблон.include('view/editor.php');?>
