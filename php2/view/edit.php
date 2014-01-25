@@ -31,9 +31,9 @@ $content - содержание
     <br/>
     Содержание:<br/>
     <textarea name="content"><?=$content?></textarea><br/>
-    <input type="submit" value="Сохранить" />
-<!--    <input type="submit" value="Отмена" />-->
-<!--    <input type="submit" value="Удалить" />-->
+    <input type="submit" name="save" value="Сохранить" />
+    <input type="submit" name="cancel" value="Отмена" />
+    <input type="submit" name="delete" value="Удалить" />
 </form>
 <hr/>
 <small><a href="http://prog-school.ru">Школа Программирования</a> &copy;</small>
