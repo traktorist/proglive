@@ -22,18 +22,18 @@ content - текст
     <h1>PHP. Уровень 2</h1>
     <br/>
     <b>Главная</b> |
-    <a href="editor.php">Консоль редактора</a>
+    <a href="../controller/c_editor.php">Консоль редактора</a>
     <hr/>
     <? if($add_success): ?>
         <b style="color: lime;">Статья добавлена.</b>
     <? endif ?>
     <ul>
         <li>
-            <b><a href="new.php">Новая статья</a></b>
+            <b><a href="../controller/c_new.php">Новая статья</a></b>
         </li>
         <? foreach ($articles as $article): ?>
             <li>
-                <a href="article.php?id_article=<?=$article['id_article']?>">
+                <a href="../controller/c_article.php?id_article=<?=$article['id_article']?>">
                     <?=$article['subject']?>
                 </a><br />
 <!--                --><?//=$article['content']?>

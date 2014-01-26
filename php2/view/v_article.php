@@ -21,8 +21,8 @@ content - текст
 <body>
 <h1>PHP. Уровень 2</h1>
 <br/>
-<a href="../controller/index.php">Главная</a> |
-<a href="../controller/editor.php">Консоль редактора</a>
+<a href="../controller/c_index.php">Главная</a> |
+<a href="../controller/c_editor.php">Консоль редактора</a>
 <hr/>
 <ul>
     <p>

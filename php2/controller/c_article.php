@@ -1,5 +1,5 @@
 <?
-include_once('startup.php');
+include_once('../controller/c_startup.php');
 include_once('../model/m_main.php');
 
 // установка параметров, подключение к БД, старт сессии

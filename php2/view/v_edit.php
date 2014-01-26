@@ -17,14 +17,14 @@ $content - содержание
 <body>
 <h1>PHP. Уровень 2</h1>
 <br/>
-<a href="index.php">Главная</a> |
-<a href="editor.php">Консоль редактора</a>
+<a href="../controller/c_index.php">Главная</a> |
+<a href="../controller/c_editor.php">Консоль редактора</a>
 <hr/>
 <h1>Редактирование статьи</h1>
 <? if($empty_field): ?>
     <b style="color: red;">Заполните все поля!</b>
 <? endif ?>
-<form method="post" action="edit.php">
+<form method="post" action="../controller/c_edit.php">
     Название:<br/>
     <input type="hidden" name="id_article" value="<?=$id_article?>" /><br/>
     <input type="text" name="subject" value="<?=$subject?>" /><br/>

@@ -1,2 +1,2 @@
 AddDefaultCharset UTF8
-#DirectoryIndex "controller/index.php"
+DirectoryIndex "c_index.php"
