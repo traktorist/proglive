@@ -12,7 +12,7 @@ $content - содержание
 <head>
     <title>PHP. Уровень 2</title>
     <meta content="text/html; charset=utf8" http-equiv="content-type">
-    <link rel="stylesheet" type="text/css" media="screen" href="view/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../view/style.css" />
 </head>
 <body>
 <h1>PHP. Уровень 2</h1>

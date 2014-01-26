@@ -16,13 +16,13 @@ content - текст
 <head>
     <title>PHP. Уровень 2</title>
     <meta content="text/html; charset=utf8" http-equiv="content-type">
-    <link rel="stylesheet" type="text/css" media="screen" href="view/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../view/style.css" />
 </head>
 <body>
 <h1>PHP. Уровень 2</h1>
 <br/>
-<a href="index.php">Главная</a> |
-<a href="editor.php">Консоль редактора</a>
+<a href="../controller/index.php">Главная</a> |
+<a href="../controller/editor.php">Консоль редактора</a>
 <hr/>
 <ul>
     <p>
