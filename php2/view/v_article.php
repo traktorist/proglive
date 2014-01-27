@@ -19,30 +19,30 @@ content - текст
     <link rel="stylesheet" type="text/css" media="screen" href="../view/style.css" />
 </head>
 <body>
-<h1>PHP. Уровень 2</h1>
-<br/>
-<a href="../controller/c_index.php">Главная</a> |
-<a href="../controller/c_editor.php">Консоль редактора</a>
-<hr/>
-<ul>
-    <p>
-        <b>Тема:</b>
-        <?=$article['subject']?>
-    </p>
-    <p>
-        <b>Тело:</b>
-        <?=$article['content']?>
-    </p>
-    <p>
-        <b>Автор:</b>
-        <?=$article['first_name'] . ' ' . $article['last_name']?>
-    </p>
-    <p>
-        <b>Дата:</b>
-        <?=$article['create_date']?>
-    </p>
-</ul>
-<hr/>
-<small><a href="http://prog-school.ru">Школа Программирования</a> &copy;</small>
+    <h1>PHP. Уровень 2</h1>
+    <br/>
+    <a href="../controller/c_index.php">Главная</a> |
+    <a href="../controller/c_editor.php">Консоль редактора</a>
+    <hr/>
+    <ul>
+        <p>
+            <b>Тема:</b>
+            <?=$article['subject']?>
+        </p>
+        <p>
+            <b>Тело:</b>
+            <?=$article['content']?>
+        </p>
+        <p>
+            <b>Автор:</b>
+            <?=$article['first_name'] . ' ' . $article['last_name']?>
+        </p>
+        <p>
+            <b>Дата:</b>
+            <?=$article['create_date']?>
+        </p>
+    </ul>
+    <hr/>
+    <small><a href="http://prog-school.ru">Школа Программирования</a> &copy;</small>
 </body>
 </html>
