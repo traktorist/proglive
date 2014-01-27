@@ -11,16 +11,8 @@ content - текст
 */
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-    <title>PHP. Уровень 2</title>
-    <meta content="text/html; charset=utf8" http-equiv="content-type">
-    <link rel="stylesheet" type="text/css" media="screen" href="../view/style.css" />
-</head>
-<body>
-    <h1>PHP. Уровень 2</h1>
-    <br/>
+
+<div>
     <a href="../controller/c_index.php">Главная</a> |
     <a href="../controller/c_editor.php">Консоль редактора</a>
     <hr/>
@@ -42,7 +34,7 @@ content - текст
             <?=$article['create_date']?>
         </p>
     </ul>
-    <hr/>
-    <small><a href="http://prog-school.ru">Школа Программирования</a> &copy;</small>
-</body>
-</html>
+</div>
+<div>
+    <?=$right_page?>
+</div>
