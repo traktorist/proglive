@@ -12,10 +12,12 @@ content - текст
 ?>
 
 
-<div>
+<div class="top">
     <a href="../controller/c_index.php">Главная</a> |
     <a href="../controller/c_editor.php">Консоль редактора</a>
     <hr/>
+</div>
+<div class="center">
     <ul>
         <p>
             <b>Тема:</b>
@@ -35,6 +37,6 @@ content - текст
         </p>
     </ul>
 </div>
-<div>
+<div class="right">
     <?=$right_page?>
 </div>
