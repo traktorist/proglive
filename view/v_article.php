@@ -13,8 +13,8 @@ content - текст
 
 
 <div class="top">
-    <a href="../controller/c_index.php">Главная</a> |
-    <a href="../controller/c_editor.php">Консоль редактора</a>
+    <a href="../../controller/c_index.php">Главная</a> |
+    <a href="../../controller/c_editor.php">Консоль редактора</a>
     <hr/>
 </div>
 <div class="center">
