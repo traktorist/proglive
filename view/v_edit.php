@@ -9,8 +9,8 @@ $content - содержание
 
 
 <div class="top">
-    <a href="../../controller/c_index.php">Главная</a> |
-    <a href="../../controller/c_editor.php">Консоль редактора</a>
+    <a href="../controller/c_index.php">Главная</a> |
+    <a href="../controller/c_editor.php">Консоль редактора</a>
     <hr/>
 </div>
 <div class="center">
@@ -18,7 +18,7 @@ $content - содержание
     <? if($empty_field): ?>
         <b style="color: red;">Заполните все поля!</b>
     <? endif ?>
-    <form method="post" action="../../controller/c_edit.php">
+    <form method="post" action="../controller/c_edit.php">
         Название:
         <input type="hidden" name="id_article" value="<?=$id_article?>" /><br/>
         <input type="text" name="subject" value="<?=$subject?>" /><br/>
