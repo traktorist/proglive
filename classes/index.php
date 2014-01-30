@@ -37,7 +37,7 @@ $alt_reverse_article_list->add($article_attach_2);
 
 
 $article_list->view();
-$reverse_article_list->view();
-$alt_reverse_article_list->view();
+//$reverse_article_list->view();
+//$alt_reverse_article_list->view();
 
 ?>
