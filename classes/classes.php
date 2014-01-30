@@ -1,78 +1,66 @@
 <?php
 
-class Article
-{
+class Article {
 	var $id;
 	var $title;
 	var $content;
 	
-	function Article($id, $title, $content)
-	{
+	function __construct($id, $title, $content) {
 		$this->id = $id;
 		$this->title = $title;
 		$this->content = $content;
 	}
 	
-	//  Функция для вывода статьи
-	function view()
-	{
+	//  Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹РІРѕРґР° СЃС‚Р°С‚СЊРё
+	function view() {
 		echo "<h1>$this->title</h1><p>$this->content</p>";
 	}
 }
 
-class NewsArticle extends Article
-{
+class NewsArticle extends Article {
 	var $datetime;
 
-	function NewsArticle($id, $title, $content)
-	{
-		parent::Article($id, $title, $content);
+	function __construct($id, $title, $content) {
+		parent::__construct($id, $title, $content);
 		$this->datetime = time();
 	}
 	
-	//  Функция для вывода статьи
-	function view()
-	{
-		echo "<h1>$this->title</h1><span style='color: red'>".
-				strftime('%d.%m.%y', $this->datetime).
-				" <b>Новость</b></span><p>$this->content</p>";
+	//  Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹РІРѕРґР° СЃС‚Р°С‚СЊРё
+	function view() {
+		echo "<h1>$this->title</h1><span style='color: red'>" .
+				strftime('%d.%m.%y', $this->datetime) .
+				" <b>РќРѕРІРѕСЃС‚СЊ</b></span><p>$this->content</p>";
 	}
 }
 
-class CrossArticle extends Article
-{
+class CrossArticle extends Article {
 	var $source;
 	
-	function CrossArticle($id, $title, $content, $source)
-	{
-		parent::Article($id, $title, $content);
+	function __construct($id, $title, $content, $source) {
+		parent::__construct($id, $title, $content);
 		$this->source = $source;
 	}
 
-	function view()
-	{
+	function view() {
 		parent::view();
-		echo '<small>'.$this->source.'</small>';
+		echo '<small>' . $this->source . '</small>';
 	}
 }
 
-class ArticleList
-{
+class ArticleList {
 	var $alist;
 	
-	function add(Article $article)
-	{
+	function add(Article $article) {
 		$this->alist[] = $article;
 	}
 	
-	//  Вывод статей
-	function view()
-	{
-		foreach($this->alist as $article)
-		{
+	//  Р’С‹РІРѕРґ СЃС‚Р°С‚РµР№
+	function view() {
+		foreach($this->alist as $article) {
 			$article->view();
-			echo '<hr />';
+			echo '<hr /><br />';
 		}
 	}
 }
+
 ?>
