@@ -91,7 +91,10 @@ class ArticleList {
     public function delete($id) {
         $i = 0;
         foreach($this->article_list as $article) {
-            if ($article->id == $id) unset($this->article_list[$i]);
+            if ($article->id == $id) {
+                unset($this->article_list[$i]);
+                break;
+            }
             $i++;
         }
     }

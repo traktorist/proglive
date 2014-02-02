@@ -16,22 +16,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-    <title>PHP. Уровень 2</title>
+    <title><?=$title;?></title>
     <link rel="stylesheet" type="text/css" media="screen" href="/view/style.css" />
 </head>
 <body>
     <div id="block">
         <div class="header">
-            <h1>PHP. Уровень 2</h1>
-            <br/>
+            <h1><?=$title;?></h1>
+            <br />
+        </div>
+        <div class="top">
+            <a href="/index.php?c=article&act=index">Главная</a> |
+            <a href="/index.php?c=article&act=editor">Консоль редактора</a>
+            <hr />
         </div>
 
         <div>
-            <?=$center_page?>
+            <?=$center_page;?>
         </div>
 
         <div class="footer">
-            <hr/>
+            <hr />
             <small><a href="http://prog-school.ru">Школа Программирования</a> &copy;</small>
         </div>
     </div>

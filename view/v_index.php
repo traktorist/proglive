@@ -12,27 +12,22 @@ content - текст
 ?>
 
 
-<div class="top">
-    <b>Главная</b> |
-    <a href="../controller/c_editor.php">Консоль редактора</a>
-    <hr/>
-</div>
 <div class="center">
-    <? if($add_success): ?>
+    <? if ($add_success): ?>
         <b style="color: lime;">Статья добавлена.</b>
-    <? endif ?>
+    <? endif; ?>
     <ul>
         <li>
-            <b><a href="../controller/c_new.php">Новая статья</a></b>
+            <b><a href="/index.php?c=article&act=new">Новая статья</a></b>
         </li>
         <? foreach ($articles as $article): ?>
             <li>
-                <a href="../controller/c_article.php?id_article=<?=$article['id_article']?>">
-                    <?=$article['subject']?>
+                <a href="/index.php?c=article&act=article&id_article=<?=$article['id_article'];?>">
+                    <?=$article['subject'];?>
                 </a><br />
-                <!--                --><?//=$article['content']?>
-                <?=$article['content_intro']?>
+<!--                --><?//=$article['content'];?>
+                <?=$article['content_intro'];?>
             </li>
-        <? endforeach ?>
+        <? endforeach; ?>
     </ul>
 </div>

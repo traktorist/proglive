@@ -1,1 +1,4 @@
 AddDefaultCharset UTF8
+#DirectoryIndex index.php
+#Options +ExecCGI
+#Options +Indexes
