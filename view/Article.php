@@ -16,22 +16,22 @@ content - текст
     <ul>
         <p>
             <b>Тема:</b>
-            <?=$article['subject']?>
+            <?=$article['subject'];?>
         </p>
         <p>
             <b>Тело:</b>
-            <?=$article['content']?>
+            <?=$article['content'];?>
         </p>
         <p>
             <b>Автор:</b>
-            <?=$article['first_name'] . ' ' . $article['last_name']?>
+            <?=$article['first_name'] . ' ' . $article['last_name'];?>
         </p>
         <p>
             <b>Дата:</b>
-            <?=$article['create_date']?>
+            <?=$article['create_date'];?>
         </p>
     </ul>
 </div>
 <div class="right">
-    <?=$right_page?>
+    <?=$right_page;?>
 </div>
