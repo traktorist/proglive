@@ -7,7 +7,7 @@
  */
 
 function __autoload($classname) {
-    include_once("c/$classname.php");
+    include_once("controller/$classname.php");
 }
 
 $action = 'action_';
@@ -15,15 +15,15 @@ $action .= (isset($_GET['act'])) ? $_GET['act'] : 'index';
 
 switch ($_GET['c']) {
     case 'page': {
-        $controller = new C_Page();
+        $controller = new Page();
         break;
     }
     case 'articles': {
-        $controller = new C_Article();
+        $controller = new Article();
         break;
     }
     default: {
-        $controller = new C_Article();
+        $controller = new Article();
     }
 }
 
