@@ -11,7 +11,12 @@ class M_MySQL {
 	}
 	
 	private function __construct() {
-		// здесь подключение к базе
+        $this->mFunctions = M_Functions::Instance();
+
+        // подключение к БД
+        $link = mysql_connect(DB_HOST, DB_USER, DB_PASS) or die('<br />Не могу соединиться с MySQL:<br />' . mysql_error());        // коннект с MySQL
+        mysql_select_db(DB_NAME, $link) or die("<br />Не могу подключиться к базе " . DB_NAME . "<br />" . mysql_errno() . " - " . mysql_error() . "<br />");
+        mysql_set_charset(ENCODING, $link); 													                                    // установка кодировки соединения с БД
 	}
 	
 	//
@@ -21,18 +26,16 @@ class M_MySQL {
 	//
 	public function Select($query) {
 		$result = mysql_query($query);
-		
-		if (!$result) die(mysql_error());
-		
-		$n = mysql_num_rows($result);
-		$arr = array();
-	
-		for($i = 0; $i < $n; $i++) {
-			$row = mysql_fetch_assoc($result);		
-			$arr[] = $row;
-		}
 
-		return $arr;				
+        if (!$result) return false;
+
+        // Извлечение из БД.
+        while ($row = mysql_fetch_array($result)) {
+            $row['content_intro'] = $this->mFunctions->content_intro($row['content']);
+            $articles[] = $row;
+        }
+
+        return $articles;
 	}
 	
 	//
@@ -42,28 +45,28 @@ class M_MySQL {
 	// результат	- идентификатор новой строки
 	//
 	public function Insert($table, $object) {
-		$columns = array(); 
-		$values = array(); 
+		$columns = array();
+		$values = array();
 	
 		foreach ($object as $key => $value) {
-			$key = mysql_real_escape_string($key . '');
+			$key = $this->mFunctions->protect($key);
 			$columns[] = $key;
 			
 			if ($value === null) {
 				$values[] = 'NULL';
 			}
 			else {
-				$value = mysql_real_escape_string($value . '');							
+				$value = $this->mFunctions->protect($value);
 				$values[] = "'$value'";
 			}
 		}
 
-		$columns_s = implode(',', $columns); 
-		$values_s = implode(',', $values);  
-			
+		$columns_s = implode(',', $columns);
+		$values_s = implode(',', $values);
+
 		$query = "INSERT INTO $table ($columns_s) VALUES ($values_s)";
 		$result = mysql_query($query);
-								
+
 		if (!$result) die(mysql_error());
 			
 		return mysql_insert_id();
@@ -80,39 +83,39 @@ class M_MySQL {
 		$sets = array();
 	
 		foreach ($object as $key => $value) {
-			$key = mysql_real_escape_string($key . '');
+			$key = $this->mFunctions->protect($key);
 			
 			if ($value === null) {
-				$sets[] = "$value=NULL";			
+				$sets[] = "$value = NULL";
 			}
 			else {
-				$value = mysql_real_escape_string($value . '');					
-				$sets[] = "$key='$value'";			
-			}			
+				$value = $this->mFunctions->protect($value);
+				$sets[] = "$key = '$value'";
+			}
 		}
 
-		$sets_s = implode(',', $sets);			
+		$sets_s = implode(',', $sets);
 		$query = "UPDATE $table SET $sets_s WHERE $where";
 		$result = mysql_query($query);
 		
 		if (!$result) die(mysql_error());
 
-		return mysql_affected_rows();	
+		return $result;
 	}
 	
 	//
 	// Удаление строк
 	// $table 		- имя таблицы
-	// $where		- условие (часть SQL запроса)	
+	// $where		- условие (часть SQL запроса)
 	// результат	- число удаленных строк
-	//		
+	//
 	public function Delete($table, $where) {
-		$query = "DELETE FROM $table WHERE $where";		
+		$query = "DELETE FROM $table WHERE $where";
 		$result = mysql_query($query);
 						
 		if (!$result) die(mysql_error());
 
-		return mysql_affected_rows();	
+		return mysql_affected_rows();
 	}
 }
 
