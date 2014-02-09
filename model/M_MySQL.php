@@ -9,7 +9,10 @@ class M_MySQL {
 		if (self::$instance == null) self::$instance = new self();
 		return self::$instance;
 	}
-	
+
+    //
+    // Конструктор
+    //
 	private function __construct() {
         $this->mFunctions = M_Functions::Instance();
 
