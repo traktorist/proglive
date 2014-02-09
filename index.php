@@ -7,7 +7,8 @@
  */
 
 function __autoload($classname) {
-    if (!@include_once("controller/$classname.php")) die('404');
+    $MVC = array('M' => 'model', 'V' => 'view', 'C' => 'controller');
+    if (!include_once($MVC[$classname[0]] . "/" .$classname . ".php")) die('404');
 }
 
 $action = 'action_';
