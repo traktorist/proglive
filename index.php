@@ -7,29 +7,14 @@
  */
 
 function __autoload($classname) {
-    if (!include_once("controller/$classname.php")) die('Не понял...');
+    if (!@include_once("controller/$classname.php")) die('404');
 }
 
 $action = 'action_';
 $action .= (isset($_GET['act'])) ? $_GET['act'] : 'index';
-$controller = ucfirst((isset($_GET['c'])) ? $_GET['c'] : 'article');            // немного магии
+$controller = 'C_' . ucfirst((isset($_GET['c'])) ? $_GET['c'] : 'article');            // немного магии
 $controller = new $controller;
 
-/*
-switch ($_GET['c']) {
-    case 'page': {
-        $controller = new Page();
-        break;
-    }
-    case 'articles': {
-        $controller = new Article();
-        break;
-    }
-    default: {
-        $controller = new Article();
-    }
-}
-*/
 $controller->Request($action);
 
 ?>
