@@ -19,7 +19,7 @@ $content - содержание
         <input type="text" name="subject" value="<?=$subject;?>" /><br />
         <br />
         Содержание:<br />
-        <textarea name="content"><?=$content;?></textarea><br />
+        <textarea name="content" class="article"><?=$content;?></textarea><br />
         <input type="submit" name="save" value="Сохранить" />
         <input type="submit" name="cancel" value="Отмена" />
         <input type="submit" name="delete" value="Удалить" />
