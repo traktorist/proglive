@@ -1,21 +1,1 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: traktor
- * Date: 29.01.14
- * Time: 20:16
- */
-
-function __autoload($classname) {
-    $MVC = array('M' => 'model', 'V' => 'view', 'C' => 'controller');
-    if (!include_once($MVC[$classname[0]] . "/" .$classname . ".php")) die('404');
-}
-
-$action = 'action_';
-$action .= (isset($_GET['act'])) ? $_GET['act'] : 'index';
-$controller = 'C_' . ucfirst((isset($_GET['c'])) ? $_GET['c'] : 'article');            // немного магии
-$controller = new $controller;
-
-$controller->Request($action);
-
-?>
+<?phpinclude_once('model/startup.php');include_once('model/M_Users.php');// Установка параметров, подключение к БД, запуск сессии.startup();// Менеджеры.$mUsers = M_Users::Instance();// Очистка старых сессий.$mUsers->ClearSessions();// Текущий пользователь.$user = $mUsers->Get();// Кодировка.header('Content-type: text/html; charset=windows-1251');?><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head>	<title>Веб-Гуру</title>	<meta content="text/html; charset=Windows-1251" http-equiv="content-type">		<link rel="stylesheet" type="text/css" media="screen" href="theme/style.css" /> </head><body>	<h1>Главная</h1>	<ul>		<li><a href="login.php">Вход/Выход</a></li>		<li><a href="contact.php">Контактная информация сотрудников</a></li>		<li><a href="salary.php">Оклад сотрудников</a></li>	</ul>	<? if ($user != null): ?>		<?=$user['login']?>	<? endif ?></body></html>
