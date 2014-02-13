@@ -123,7 +123,6 @@ class M_Users {
     // результат	- true или false
     //
     public function Can($priv, $id_user = null) {
-        echo 'lol';
         // СДЕЛАТЬ САМОСТОЯТЕЛЬНО
         return false;
 //        return true;
